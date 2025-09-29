@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="styles.css" />
-<title>Your Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            margin: 15vh;
+            overflow: hidden;
+        }
+        .scrollable-text {
+            position: absolute;
+            white-space: nowrap;
+            animation: scrollText 20s linear infinite;
+        }
+        .blinking-text {
+            margin-top: 60px; /* to avoid overlap with absolute text */
+            animation: blinkText 2s alternate infinite;
+        }
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes colorchange{
+            0%{color:brown;
+            }
+        }
+        @keyframes blinkText {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <title>CSS Animation Demo</title>
 </head>
 <body>
-<header>
-    <h1>Disha M</h1>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-
-  <section id="home">
-    <h2>Welcome</h2>
-    <p>Welcome to my portfolio website!</p>
-  </section>
-
-  <section id="about" class="profile">
-    <div class="photo">
-      <img src="your-photo.jpg" alt="Your Photo" />
+    <div class="scrollable-text">
+        This is a scrollable text that scrolls from right to left
     </div>
-    <div class="bio">
-      <h2>About Me</h2>
-      <p>
-        My name is Disha M. I'm from Puttur. I completed my schooling <br />
-        at Vivekananda Puttur. After 10th grade, I pursued a diploma in CS at Vivekananda <br />
-        Polytechnic, Nehru Nagar, Puttur. Listening to music is my hobby.<br />
-      </p>
+    <div class="blinking-text">
+        <p>This is a blinking text that blinks at regular intervals</p>
+        <p>Show results in a different line</p>
     </div>
-  </section>
-
-
-</main>
-
-<footer id="contact">
-  <h2>Contact Me</h2>
-  <h4>Email: 25dipcs09@nmamit.in</h4>
-  <p>&copy; 2025 Disha. All rights reserved.</p>
-</footer>
 </body>
 </html>
